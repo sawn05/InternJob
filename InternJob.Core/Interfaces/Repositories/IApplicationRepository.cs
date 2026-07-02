@@ -1,0 +1,11 @@
+﻿using InternJob.Core.Entities;
+
+namespace InternJob.Core.Interfaces.Repositories;
+
+public interface IApplicationRepository
+{
+    Task<bool> ExistsAsync(int jobId, int candidateId);
+    Task<List<Application>> GetByCandidateIdAsync(int candidateId);
+    Task AddAsync(Application application);
+    Task SaveChangesAsync();
+}
